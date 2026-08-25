@@ -4,7 +4,7 @@ Projeto de **classificação binária** para prever se o **IBOVESPA** vai fechar
 
 > **Objetivo do desafio:** prever a tendência do IBOVESPA no dia seguinte com base em dados históricos, avaliando no **último mês (30 pregões)** e buscando **acurácia mínima de 75%**.
 
----
+
 
 ## Contexto do Problema
 
@@ -12,7 +12,7 @@ A volatilidade do IBOVESPA gera incerteza para tomada de decisão. A proposta aq
 
 Este modelo pode ser usado como **insumo para dashboards internos** e análises quantitativas.
 
----
+
 
 ##  Dados
 
@@ -35,7 +35,6 @@ Estrutura típica (OHLCV):
   <img src="img/grafico%202.png" alt="Tendência anual do fechamento médio do IBOVESPA" width="950">
 </p>
 
----
 
 ## Target (Variável Alvo)
 
@@ -46,7 +45,7 @@ Criamos uma variável binária `tendencia` comparando o fechamento do dia **D** 
 
 > Observação: a codificação 0/1 é apenas convenção. O importante é representar “sobe vs desce” respeitando a ordem temporal.
 
----
+
 
 ## Engenharia de Atributos (Features)
 
@@ -59,7 +58,6 @@ Foram criadas features para capturar **tendência, momentum** e dinâmica recent
 
 Essas variáveis ajudam o modelo a capturar acelerações, reversões e padrões recorrentes.
 
----
 
 ## Preparação e Validação Temporal
 
@@ -70,7 +68,6 @@ Para evitar **data leakage** e respeitar a natureza sequencial da série:
 
 A divisão é feita mantendo a ordem cronológica (sem embaralhar).
 
----
 
 ## Modelos
 
@@ -83,7 +80,6 @@ A divisão é feita mantendo a ordem cronológica (sem embaralhar).
 - capacidade de capturar relações não-lineares
 - controles de regularização para reduzir overfitting
 
----
 
 ## Resultados (Teste: 30 pregões)
 
@@ -103,9 +99,8 @@ A divisão é feita mantendo a ordem cronológica (sem embaralhar).
   <img src="img/grafico%204.png" alt="Importância das Features - XGBoost" width="950">
 </p>
 
----
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```text
 ├─ img/
