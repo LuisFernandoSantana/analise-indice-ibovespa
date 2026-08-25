@@ -6,7 +6,7 @@ Projeto de **classificação binária** para prever se o **IBOVESPA** vai fechar
 
 ---
 
-## 🧠 Contexto do Problema
+## Contexto do Problema
 
 A volatilidade do IBOVESPA gera incerteza para tomada de decisão. A proposta aqui é construir um modelo que, dado o comportamento histórico recente do índice, indique se o fechamento do próximo pregão tende a subir ou cair.
 
@@ -14,7 +14,7 @@ Este modelo pode ser usado como **insumo para dashboards internos** e análises 
 
 ---
 
-## 📌 Dados
+##  Dados
 
 - **Fonte (pública):**
   - link: https://br.investing.com/indices/bovespa-historical-data  
@@ -37,7 +37,7 @@ Estrutura típica (OHLCV):
 
 ---
 
-## 🎯 Target (Variável Alvo)
+## Target (Variável Alvo)
 
 Criamos uma variável binária `tendencia` comparando o fechamento do dia **D** com o fechamento do dia **D+1**:
 
@@ -48,7 +48,7 @@ Criamos uma variável binária `tendencia` comparando o fechamento do dia **D** 
 
 ---
 
-## 🧱 Engenharia de Atributos (Features)
+## Engenharia de Atributos (Features)
 
 Foram criadas features para capturar **tendência, momentum** e dinâmica recente do mercado, como:
 
@@ -61,7 +61,7 @@ Essas variáveis ajudam o modelo a capturar acelerações, reversões e padrões
 
 ---
 
-## 🧪 Preparação e Validação Temporal
+## Preparação e Validação Temporal
 
 Para evitar **data leakage** e respeitar a natureza sequencial da série:
 
@@ -72,7 +72,7 @@ A divisão é feita mantendo a ordem cronológica (sem embaralhar).
 
 ---
 
-## 🤖 Modelos
+## Modelos
 
 ### Baseline
 - **Random Forest** como referência inicial.
@@ -85,7 +85,7 @@ A divisão é feita mantendo a ordem cronológica (sem embaralhar).
 
 ---
 
-## 📈 Resultados (Teste: 30 pregões)
+## Resultados (Teste: 30 pregões)
 
 - **Acurácia:** **73,33%** (22 acertos em 30)
 - **ROC AUC:** ~**0,73**
